@@ -2,4 +2,4 @@
 #include "stdlib.h"
 #include "stdio.h"
 
-int sum(char *valueOne, char* valueTwo);
+void sum1(char *valueOne, char* valueTwo);

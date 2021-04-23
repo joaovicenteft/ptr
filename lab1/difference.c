@@ -1,8 +1,11 @@
 #include "difference.h"
 
-int difference(char *valueOne, char*valueTwo) {
+void difference1(char *valueOne, char*valueTwo) {
+    
     int firstValue = atoi(valueOne);
     int secondValue = atoi(valueTwo);
 
-    return (firstValue - secondValue);
+    int differenceNumbers = firstValue-secondValue;
+
+    printf("A diferença dos números: %d\n", differenceNumbers);
 }

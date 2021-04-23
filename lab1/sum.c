@@ -1,9 +1,11 @@
 #include "sum.h"
 
-void sum(char* valueOne, char* valueTwo) {
+void sum1(char* valueOne, char* valueTwo) {
 
     int firstValue = atoi(valueOne);
     int secondValue = atoi(valueTwo);
 
-    return (firstValue+secondValue);
+    int sumNumbers = firstValue+secondValue;
+
+    printf("A soma dos números: %d\n", sumNumbers);
 }

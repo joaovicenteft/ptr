@@ -2,4 +2,4 @@
 #include "string.h"
 #include "stdio.h"
 
-int difference(char *valueOne, char* valueTwo);
+void difference1(char *valueOne, char* valueTwo);
