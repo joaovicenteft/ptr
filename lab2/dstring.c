@@ -1,9 +1,14 @@
 #include "dstring.h"
+#define baseM(s) ((s->cstr))
 
 struct dstring {
     size_t size;
     char *cstr;
 };
+
+char* macroString(const dstring s) {
+    return baseM(s);
+}
 
 // novo ADT a partir de um char
 dstring ds_new(const char* cstr) {
@@ -35,6 +40,32 @@ dstring ds_int(const int numstr) {
     str = (char*)malloc(sizeof(numstr));
 
     sprintf(str, "%d", numstr);
+
+    dstring ds = calloc(1, sizeof(struct dstring));
+
+    if (ds == NULL) return NULL;
+
+
+    size_t len = strlen(str);
+
+    ds->cstr = calloc(len+1, sizeof(char));
+    ds->size = len;
+
+    strcpy(ds->cstr, str);
+
+    if(ds->cstr == NULL) return NULL;
+
+    return ds;
+}
+
+// novo ADT a partir de um long int, onde um long é convertido em char*
+dstring ds_longint(const long int numstr) {
+
+    char *str;
+
+    str = (char*)malloc(sizeof(numstr));
+
+    sprintf(str, "%ld", numstr);
 
     dstring ds = calloc(1, sizeof(struct dstring));
 

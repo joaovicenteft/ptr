@@ -10,11 +10,17 @@
 struct dstring;
 typedef struct dstring* dstring;
 
+// retorna char, utilizando define como macro
+char* macroString(const dstring s);
+
 // inicializa o tipo abstrato
 dstring ds_new(const char* cstr);
 
 // inicializa o tipo abstrato, mas dessa vez com int
 dstring ds_int(const int numstr);
+
+// inicializa o tipo abstrato, mas dessa vez com long int
+dstring ds_longint(const long int numstr);
 
 // inicializa o tipo abstrato, mas dessa vez com float
 dstring ds_float(const float numstr);
